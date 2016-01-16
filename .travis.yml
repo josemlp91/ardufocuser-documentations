@@ -20,6 +20,6 @@ deploy:
   file: proyect.pdf
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
     all_branches: true
     repo: josemlp91/ardufocuser_documentations
