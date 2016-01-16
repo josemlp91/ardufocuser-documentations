@@ -1,1 +1,1 @@
-# Parte Hardware y electronica
+# Parte Hardware y electrónica

@@ -1,3 +1,3 @@
 # Reduccion
 
-Consiste en selecionar las partes interesantes para solucionar el problema.
+Consiste en seleccionar las partes interesantes para solucionar el problema.

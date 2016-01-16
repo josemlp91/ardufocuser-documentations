@@ -1,3 +1,3 @@
 # Framework
 
-Material utilizado, librerias auxiliares.
+Material utilizado, librerías auxiliares.
