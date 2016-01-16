@@ -1,5 +1,4 @@
 
-
 before_install:
   - sudo apt-get update
   - sudo apt-get install aspell-es
@@ -8,6 +7,18 @@ before_install:
   - wget https://raw.githubusercontent.com/josemlp91/test_spanish_spelling/master/.aspell.es.pws
   - cp .aspell.en.pws ~/
   - cp .aspell.es.pws ~/
+  - curl -L https://raw.githubusercontent.com/krlmlr/texlive-squashfs/master/out/texlive.tar.xz | tar xJC ~
 
-script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT" ]; then echo $OUTPUT; echo $f; exit 1; fi; done
+install:
+  - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
 
+script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT" ]; then echo $OUTPUT; echo $f;cd ./latex; ./makePDF.sh;  exit 1; fi; done
+
+deploy:
+  provider: releases
+  api_key: f2fd865a60160bea5c11748cb696237e0d2f1778
+  file: proyect.pdf
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
