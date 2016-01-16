@@ -16,8 +16,7 @@ script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do
 
 deploy:
   provider: releases
-  api_key:
-    secure: 9319f16f5395d6f70fc746c036d5c59966364cfb
+  api_key: 71f469ea1ca03b0b1c933addba7a6fa00a3c3f89
   file: proyect.pdf
   skip_cleanup: true
   on:
