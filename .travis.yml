@@ -15,14 +15,13 @@ script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do
   ]; then echo $OUTPUT; echo $f;cd ./latex; ./makePDF.sh;  exit 1; fi; done
 deploy:
   provider: releases
-  api_key:
-    secure: "rWjceO6LmZ6UAuhlGl8nJ3JEznisaFd19mjLQINPDCWVlSMY+nAi/Q+oTTXgEVQEpxYEOogj2MgTUxB/yO/aV6kR7Cv3dkD2eSOnvHdAXJVUKIEqv22d2baL8tvhDiUNdggsQmsxzBazX5gGjpaWGVK8nHt8FD+DCC7velPc7GdVokyukWROd1kiQqrLPl1RpfUt9RaS+cKZZl7G5ZfRirxs13DwKc8mduEa69pCoOrfGCUs7Y7EcwFL3fijjZGit/Xz4OpYj6/cgVfU/BD3Q7fj/bGbR+SWzWcv2x/leC0D/46WrPpSlgtTPZU2UCmzmDcFnE0+CtMjtaU/xaX79pQryvMIYSPp8Vvr3yMogGT3pQGbgNddDX2MTH8y1vqdCEk7o0pKbHcOz2U1I2gHG/ocCPh2zbYLfA9my8Xuh/UQTQDtFk2LfsVFUR3dVNkH6qOYyrpdbqD/1jh28KeFX8bjQUusPal4LpAx/gG4PL0RoqLaWwiP7STr0OTrILbXY2NuZeZOFZDIS17YgvFhithNSnxOXNMhF8ygHsDr5HsxXFBVpe5oFYiakmgsAehphnKZRr5ovzFBNOAQVl7UZXR19YYno0ADj0KMqjWa/TbPqZfDWI5R3xiASsmjr+b4kYrk4JQ1RNV57+d4lGt0N2aO+aBQXsdin9KlOcb0BHE="
-  file: proyect.pdf
+  user: "josemlp91"
   skip_cleanup: true
   on:
     tags: false
     all_branches: true
-
+  password:
+    secure: a6nE9+ywhDB4R3+HW+zoCIBPPAdzgOZLHdxM0FZSpwWEsizPuoFBuFrtMnF42pZKKO+bRXYsvJNvI/Xq4DbvVdyE1e80eelTH2VVSLC4yv0SVaO1gPWG9nnah3c4qLsppbBbhEeZWnvS/X3l1c1R3JkvjuMMX7VycilgO+7lF4ne0xfrkOGWrl248S87cp3xV+afgoqqoNwBygaYqkHu4fpMx/0mKkwRHbj49YSVP6eZTTXP8MqmCdBZ/13M32keXK42coV4cGjGBnIb22IX8+bRy8X8DwT5FQ7HWkuQ+f1a6ba38siBO82Ds61ubnQM0p1uszaLrJPHH4exxifXHFa4o1SRSquYbDZeexAEjjRsZ5EgpRrkGLQ+DoRz5KEUz96xdnFT1rLlFjQDqfsJitigvXZ5qNPzi8USYZ9wCFRqqRoLR6Pzc67hTQNc7XpX5FtwjbMggxnSMg+FAoUJclv/D1IddzfepYPP3rRExO4qZgmwvQ/IfSX6jzdUqHZA4XSNkNMGJbwGA4RkBFOT/t//pUctuRpmmUzyz4fsMjhEEahsNpTAUSrva79mhg/vsbzoiWmmXmSpBttOdddzqgp/D8Q3D2R+syMcc58t/a5fZB8uBmaf9IsAZklWVJjmmSxcKlJ2FAUWEyoly7eAYi0cdUWWQFyBs9nuZynZNZg=
 env:
   global:
   - secure: o9IPAVD2fR+/KzT9UG2yCGOHpbOJxnbd8g2fh+HJNK4uLx3VeXW7Gyla+KXmerBzG8m7yPz+A/SU5J8zzLq9XFQfThmZTRIifYAu7xitw1kYb7PcMtrQfB30izxC5IbQ8zGbt699Oq9/AilHsjw4Qkqqtlaxfzw4qx1bYjzsSjs+Wuf+aCGY0RkU2TEcBnrrkq/HnK9eDLHXtYreWOfMMZGDJXrXjGt7CLlQHeBvY7CfuyK49N7mnFEojLW228R3Q2YS61ap+27SbrmBuAv0SfhqwOXhiU+2zCpOBX17dB2wy4sDcNuXSgvIf6v4UgseH+wftC5lAS21YhKXpTtytmLYClbvyGDF2KSauVbzFLryizZV+qQQMbWQ+XptvygQBol7Ea6HvvFTkk/BMRqyo34cuLh3EZeG1zDPbBT9/1KBsar9lPUk04WsG6Cl3Bt+XyzohUQ3fRHyyZQnFFuuNT/n6I1B5aPfPnk1cudSsTYLiDquYBBuuLsp51bZypCoNZKIvpGaG7dCPcQCvZ/qRlfUzxJimvugHzdCminBFw3zjMHmQw1E+VsMtV3IIecF/B9SZH4q080ti5e3ATgDTun8AYEUu1HOOvmai4RujF7hZWbg4k3rWDq9smXYfQ34XY2IY6+yUJht8V1hXc1BF/WxCyyamED5IZ8VP64hBeo=
