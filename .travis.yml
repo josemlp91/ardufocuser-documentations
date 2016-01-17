@@ -23,4 +23,4 @@ deploy:
   on:
     repo: josemlp91/ardufocuser_documentations
     tags: true
-     all_branches: true
+    all_branches: true
