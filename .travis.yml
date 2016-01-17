@@ -6,10 +6,8 @@ before_install:
 - wget https://raw.githubusercontent.com/josemlp91/test_spanish_spelling/master/.aspell.es.pws
 - cp .aspell.en.pws ~/
 - cp .aspell.es.pws ~/
-- curl -L https://raw.githubusercontent.com/krlmlr/texlive-squashfs/master/out/texlive.tar.xz
-  | tar xJC ~
+
 install:
-- PATH=$HOME/texlive/bin/x86_64-linux:$PATH
 - sudo apt-get install ttf-sil-gentium ttf-sil-gentium-basic
 - sudo apt-get install texlive-fonts-extra ttf-inconsolata ttf-droid
 - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra
