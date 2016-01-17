@@ -4,7 +4,7 @@
 cd text
 pdflatex -synctex=1 -interaction=nonstopmode  project.tex
 
-
+cd ..
 rm {*.aux,*.lof,*.log,*.lol,*.lot,*.out,*.synctex.gz,*toc}
 find . -name "*.aux"  -type f -delete
 find . -name "*.lof"  -type f -delete
