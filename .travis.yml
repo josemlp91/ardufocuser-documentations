@@ -1,25 +1,29 @@
-
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install aspell-es
-  - sudo apt-get install aspell-en
-  - wget https://raw.githubusercontent.com/josemlp91/test_spanish_spelling/master/.aspell.en.pws
-  - wget https://raw.githubusercontent.com/josemlp91/test_spanish_spelling/master/.aspell.es.pws
-  - cp .aspell.en.pws ~/
-  - cp .aspell.es.pws ~/
-  - curl -L https://raw.githubusercontent.com/krlmlr/texlive-squashfs/master/out/texlive.tar.xz | tar xJC ~
-
+- sudo apt-get update
+- sudo apt-get install aspell-es
+- sudo apt-get install aspell-en
+- wget https://raw.githubusercontent.com/josemlp91/test_spanish_spelling/master/.aspell.en.pws
+- wget https://raw.githubusercontent.com/josemlp91/test_spanish_spelling/master/.aspell.es.pws
+- cp .aspell.en.pws ~/
+- cp .aspell.es.pws ~/
+- curl -L https://raw.githubusercontent.com/krlmlr/texlive-squashfs/master/out/texlive.tar.xz
+  | tar xJC ~
 install:
-  - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
-
-script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT" ]; then echo $OUTPUT; echo $f;cd ./latex; ./makePDF.sh;  exit 1; fi; done
-
+- PATH=$HOME/texlive/bin/x86_64-linux:$PATH
+script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat
+  $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT"
+  ]; then echo $OUTPUT; echo $f;cd ./latex; ./makePDF.sh;  exit 1; fi; done
 deploy:
   provider: releases
-  api_key: ea77d9b7b049758007df3ec532d8782c13c2526e
+  api_key:
+    secure: "rWjceO6LmZ6UAuhlGl8nJ3JEznisaFd19mjLQINPDCWVlSMY+nAi/Q+oTTXgEVQEpxYEOogj2MgTUxB/yO/aV6kR7Cv3dkD2eSOnvHdAXJVUKIEqv22d2baL8tvhDiUNdggsQmsxzBazX5gGjpaWGVK8nHt8FD+DCC7velPc7GdVokyukWROd1kiQqrLPl1RpfUt9RaS+cKZZl7G5ZfRirxs13DwKc8mduEa69pCoOrfGCUs7Y7EcwFL3fijjZGit/Xz4OpYj6/cgVfU/BD3Q7fj/bGbR+SWzWcv2x/leC0D/46WrPpSlgtTPZU2UCmzmDcFnE0+CtMjtaU/xaX79pQryvMIYSPp8Vvr3yMogGT3pQGbgNddDX2MTH8y1vqdCEk7o0pKbHcOz2U1I2gHG/ocCPh2zbYLfA9my8Xuh/UQTQDtFk2LfsVFUR3dVNkH6qOYyrpdbqD/1jh28KeFX8bjQUusPal4LpAx/gG4PL0RoqLaWwiP7STr0OTrILbXY2NuZeZOFZDIS17YgvFhithNSnxOXNMhF8ygHsDr5HsxXFBVpe5oFYiakmgsAehphnKZRr5ovzFBNOAQVl7UZXR19YYno0ADj0KMqjWa/TbPqZfDWI5R3xiASsmjr+b4kYrk4JQ1RNV57+d4lGt0N2aO+aBQXsdin9KlOcb0BHE="
   file: proyect.pdf
   skip_cleanup: true
   on:
     tags: false
     all_branches: true
-    repo: josemlp91/ardufocuser_documentations
+
+env:
+  global:
+  - secure: o9IPAVD2fR+/KzT9UG2yCGOHpbOJxnbd8g2fh+HJNK4uLx3VeXW7Gyla+KXmerBzG8m7yPz+A/SU5J8zzLq9XFQfThmZTRIifYAu7xitw1kYb7PcMtrQfB30izxC5IbQ8zGbt699Oq9/AilHsjw4Qkqqtlaxfzw4qx1bYjzsSjs+Wuf+aCGY0RkU2TEcBnrrkq/HnK9eDLHXtYreWOfMMZGDJXrXjGt7CLlQHeBvY7CfuyK49N7mnFEojLW228R3Q2YS61ap+27SbrmBuAv0SfhqwOXhiU+2zCpOBX17dB2wy4sDcNuXSgvIf6v4UgseH+wftC5lAS21YhKXpTtytmLYClbvyGDF2KSauVbzFLryizZV+qQQMbWQ+XptvygQBol7Ea6HvvFTkk/BMRqyo34cuLh3EZeG1zDPbBT9/1KBsar9lPUk04WsG6Cl3Bt+XyzohUQ3fRHyyZQnFFuuNT/n6I1B5aPfPnk1cudSsTYLiDquYBBuuLsp51bZypCoNZKIvpGaG7dCPcQCvZ/qRlfUzxJimvugHzdCminBFw3zjMHmQw1E+VsMtV3IIecF/B9SZH4q080ti5e3ATgDTun8AYEUu1HOOvmai4RujF7hZWbg4k3rWDq9smXYfQ34XY2IY6+yUJht8V1hXc1BF/WxCyyamED5IZ8VP64hBeo=
+  - secure: AEsF73o8zAY+rxuMlGw32brDi41nL/ILLbBcehqdqVVc9XDel9kZwLD1FkxqKghYn0zt1FNRwuZHjNwWzohz6aSLHp7XtJjObGn7odCrZXJmhY81gG+oMOn6JuAQTmkdUg3mBcVOzuAsYKRVaYCYYfJXsJrR2u8fRwIwxm8N0DE94MlSp74Lkob03JSmyqhrFg29FyyEGNRQgGR/4MmrBWNi5u7/Ql0Mex6n1985jwO8J80i0mik0I4GfHqP10Y/Clfiz/ZT+Ei+5mQEyGYZZbz6XSIsuRMQC9PUlNW/LNGU1sF8xoAiyOhjCc0IDg3Ybgd7crVi4GNgaFP64JAsTKpURHVIE9cDtLXN203sdraiOtOYxb55qdoihHRm8HT7kztontafjP0N0VxFm0a5ufKPOzWOuMw3oveYtAZGpMK1vI3I3TfGofNHdKTZWv/A09CjEkDLpp0gtedNjYIzAtkFYbjS1XdIapc8+vUkzQYORIdg6goPBLtyxPceATUPwO02aMnBF7UrZGlDLhgUXxajPG5nKkea7vrclf9jx8yIGAcmvVWn+siKNO6D1TNP5FblTIkAW+OSZ/6yabe2fuD8bUznsjxsLKAfQ+vapk5CJr8t4AnYHjG+iXa1QfK92LJFRFtDTYRbfoXqdY8oAETdx7JUUzEIcVI4zhYLgUg=
