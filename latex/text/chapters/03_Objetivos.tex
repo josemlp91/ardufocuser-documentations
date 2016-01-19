@@ -1,0 +1,55 @@
+\chapter{Objetivos}
+
+El objetivo global de este proyecto es desarrollar un sistema automático de \textbf{autoenfoque}, dicho sistema debe permitir un modo de funcionamiento remoto utilizando el protocolo \textbf{INDI},
+adicionalmente se implementa una interfaz  \textbf{JAVA} que permita visualizar el funcionamiento de las distintas rutinas de procesamiento de imagenes,
+sirviéndonos como framework de trabajo, por último se implementa una interfaz que permite ejecutar directamente la rutina de enfoque automático,
+así como interactuar con el dispositivo enfocador de forma remota.
+
+
+\bigskip
+Este objetivo se desglosa en los siguientes objetivos principales:
+
+\begin{itemize}
+  \item \textbf{OBJ-1.} Diseño dispositivo usando plataforma libre Arduino  \textbf{Arduino}, que interactúa directamente con controles de enfoque de \textbf{telescopios}, mediante motor y distintos sensores, Ardufocuser.
+  \item \textbf{OBJ-2.} Rutinas de procesamiento de imágenes, encargadas de detectar y filtrar objetos celestes con características estelares.
+  \item \textbf{OBJ-3.} Extraer distintas medidas y heurísticas para evaluar el nivel de enfoque alcanzado en las distintas imágenes estelares, basándonos en el calculo FWHM.
+  \item \textbf{OBJ-4.} Implementar Driver Indi \textbf{Driver INDI} que provea de la funcionalidad básica para controlar todas las características del dispositivo enfocador.
+  \item \textbf{OBJ-5.} Implementar algoritmo de autofocus, basándonos en la medida del foco calculada y coordinada con las funciones del dispositivo Ardufocuser y las imagenes capturadas por el CCD.
+\end{itemize}
+
+\bigskip
+Además de los objetivos principales, se persigue alcanzar los siguientes objetivos secundarios:
+
+\begin{itemize}
+  \item \textbf{OBJ-S-1.} Completar una buena documentación técnicas, así como manuales para desarrolladores, a fin de que cualquier interesado sea capaz de reproducir fácilmente y a bajo costo el proyecto.
+  \item \textbf{OBJ-S-2.} Publicar código fuente, diseños y documentación bajo una licencia libre, que permita que la comunidad de desarrolladores interesados pueda realizar modificaciones y personalizaciones, siempre que se mantenga la misma licencia.
+  \item \textbf{OBJ-S-3.} Difusión en la comunidad astronómica y desarrollo de una web propia del proyecto.
+
+\end{itemize}
+
+\bigskip
+Para la realización de los objetivos se pondrán en practica los conocimientos alcanzados en:
+
+\begin{itemize}
+  \item \textbf{Ingeniería del software} para el análisis y diseño del proyecto, así como modelar el sistema.
+  \item \textbf{Programación orientada a objetos} para la estructura y la organización del código \textbf{Java}.
+  \item \textbf{Programación de sistemas multimedia} para poder implementar las interfaces de usuario en \textbf{Java Swing}, así como visualizar y tratar las imagenes.
+  \item \textbf{Infraestructura virtual} para poder gestionar los sistemas, teniendo habilidad para realizar instalaciones y aprovisionamiento del servidor.
+  \item \textbf{Transmisión de datos y redes de computadores} para comprender el comportamiento del protocolo \textbf{INDI} y configurar correctamente las redes para las pruebas.
+  \item \textbf{Algorítmica} para optimizar las rutinas de tratamiento de imagenes.
+  \item \textbf{Calculo matemático} para modelar los objetos celestes como una función gaussiana que representa la luminosidad, así como el calculo del FWHM.
+  \item \textbf{Estructura de datos} dado que contamos con representaciones de las imagenes, que debemos conocer y saber manejar.
+
+
+\end{itemize}
+
+\bigskip
+Por otro lado, han sido necesarios alcanzar conocimientos en otras áreas:
+
+\begin{itemize}
+
+  \item \textbf{Astronomía básica y equipos astronómicos} para entender a los usuarios potenciales y poder acomodar la aplicación a sus necesidades.
+  \item \textbf{Raspberry Pi}\footnote{Ordenador de placa reducida y única de bajo coste.} para montar un servidor permanente de pruebas o acceso público para probar la aplicación
+  \item \textbf{Latex}\footnote{Sistema de composición de textos.} para la realización del presente documento y la ampliación de conocimientos para futuros textos científicos.
+  \item \textbf{Git} para la gestión de versiones y la publicación de código abierto que permita a otros desarrolladores participar.
+\end{itemize}

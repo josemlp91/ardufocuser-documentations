@@ -7,20 +7,4 @@ before_install:
 - cp .aspell.en.pws ~/
 - cp .aspell.es.pws ~/
 
-install:
-- sudo apt-get update && sudo apt-get install texlive texlive-base
-- sudo apt-get install texlive-full
-
-
-script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT"]; then echo $OUTPUT; echo $f; cd ./latex/text;  pdflatex -synctex=1 -interaction=nonstopmode  project.tex;  exit 1; fi; done
-
-deploy:
-  provider: releases
-  api_key:
-    secure: kWh3vZ7l8WgRb7E6h3seojWNQuIk4Mil98Yam9yz8VU5I4SOlomXRJhaqHmH8w/usbaBnMGtB01oZeza1vWMV3+VqxYv9ypKARX81M05D5uzEBeo1Z2DSZUCGzpVkHBYPHkOpODZvnJ9Q1XtJiSQ6RU2hpGYJlU0GjJdfzIPwatZUrp+T/8duekiJlA7+hK+f3KmqspJrV+y5CFU0TLSmX3N/AmxXnBrSRYyG7CD0puhkZJdCJgm3YPBOp2Xh0cIhATUOTx5IjIyWgoNrCVYN9HzTNpu6WOFPeHq6psw9lXfFewtdQMUztwNE/nWHiMsp5+MXprRQw9kJ8Zh7tQTcKWClcC6BF6ya+QTrTtlY5w/wB6pNeLgheg4ZzR1bjx2ccRg255I0e7/Zgvh6Q43J0fmRG05FlQ14EEIE6LZqdPGMJ2+Be89pCdPJw7Tde+T5ZLVL1BLMt4FWSbHHQvhVsmym93ED9WyaCRWX0bBrfPX8wHwwROP2cGm9yl0JQ9xzs/B2uNKrnS5UjMbEy4l221DCa+S9ET99zKOWmxw7QDQCoqVS8CDXIuo1ZIzIWwy2FsDPnSVy+02IvKhreaUZ9tjAkHw5rJjrrk1h2vsP5uaMTuNQpPuNP8FEGR1BsOzcy1c5NeiFIAANK8gIrchWPLC64VvRWTdvVngQbAo0dk=
-  file: ./latex/text/project.pdf
-  skip_cleanup: true
-  on:
-    repo: josemlp91/ardufocuser_documentations
-    tags: true
-    all_branches: true
+script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT"]; then echo $OUTPUT; exit 1; fi; done

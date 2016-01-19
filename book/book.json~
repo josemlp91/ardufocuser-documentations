@@ -1,4 +1,0 @@
-{
-    "plugins": ["math"],
-    "plugins": ["gitbookcode"]
-}
