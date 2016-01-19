@@ -6,18 +6,5 @@ before_install:
 - wget https://raw.githubusercontent.com/josemlp91/test_spanish_spelling/master/.aspell.es.pws
 - cp .aspell.en.pws ~/
 - cp .aspell.es.pws ~/
-<<<<<<< HEAD
-=======
-- curl -L https://raw.githubusercontent.com/krlmlr/texlive-squashfs/master/out/texlive.tar.xz
-  | tar xJC ~
-install:
-- sudo apt-get install texlive texlive-latex-extra texlive-lang-spanish xzdec
-- tlmgr init-usertree
-- tlmgr install xcolor
-
-script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat
-  $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT"
-  ]; then echo $OUTPUT; echo $f;cd ./latex; ./makePDF.sh;  exit 1; fi; done
->>>>>>> c45ba388df1e6272a361861f91eabd8ef6fbb7d2
 
 script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT"]; then echo $OUTPUT; exit 1; fi; done
