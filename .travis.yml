@@ -7,4 +7,4 @@ before_install:
 - cp .aspell.en.pws ~/
 - cp .aspell.es.pws ~/
 
-script: for f in $(find ./ -name '*.txt' -or -name '*.lex' -or -name '*.md'); do OUTPUT=`cat $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT"]; then echo $OUTPUT; exit 1; fi; done
+script: for f in $(find ./ -name '*.txt' -or -name '*.lex' ); do OUTPUT=`cat $f | aspell --lang=en list | aspell --lang=es list |  sort -u`; if [ -n "$OUTPUT"]; then echo $OUTPUT; exit 1; fi; done
