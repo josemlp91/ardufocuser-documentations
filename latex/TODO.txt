@@ -1,0 +1,4 @@
+1) Indice general de capitulos, subcapitulos y secciones.
+2) Crear fichero bibliografica : ver ejemplo docu Pablo.
+3) Secciones introducción mención software, harware libre.
+4) 

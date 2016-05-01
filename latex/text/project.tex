@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+%\usepackage{natbib}
 
 % Información reutilizable
 \newcommand{\asunto}{Trabajo de Fin de Grado}
@@ -24,6 +25,9 @@
 \newcommand{\universidad}{Universidad de Granada}
 \newcommand{\ciudad}{Granada}
 \newcommand{\vers}{Versión 1.0}
+
+%Comandos personalizados
+\newcommand{\grad}{$^{\circ}$}
 
 % Información archivo
 \hypersetup{
@@ -190,34 +194,35 @@
 \makeatother
 
 \begin{document}
-\input{front/front}
-\frontmatter
-\input{prefaces/prefaces}
+ \input{front/front}
+ \frontmatter
+ \input{prefaces/prefaces}
 
-\begingroup
-\let\cleardoublepage\clearpage
+ \begingroup
+ \let\cleardoublepage\clearpage
   \tableofcontents
   \listoffigures
-  \listoftables
-  \lstlistoflistings
-\endgroup
+  %\listoftables
+  %\lstlistoflistings
+ \endgroup
 
-\newpage
-\thispagestyle{empty}
-\
-\mainmatter
+ \newpage
+ \thispagestyle{empty}
+ \
+ \mainmatter
 \input{chapters/01_Resumen}
 \input{chapters/02_Introduccion}
 \input{chapters/03_Objetivos}
+\input{chapters/04_Sistema_Hardware}
 
 
-\backmatter
 
 \newpage
-\begin{thebibliography}{99}
-	\input{back/bibliography}
-\end{thebibliography}
+%\bibliography{BIBLIO}
+\bibliographystyle{apalike}
+\bibliography{bibliografia}\addcontentsline{toc}{chapter}{Bibliografía}
+%\bibliographystyle{miunsrturl}
+%\bibliographystyle{ieeetr}
 
-\newpage \
-\thispagestyle{empty}
+
 \end{document}

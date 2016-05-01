@@ -1,0 +1,32 @@
+\begin{document}
+\input{front/front}
+\frontmatter
+\input{prefaces/prefaces}
+
+\begingroup
+\let\cleardoublepage\clearpage
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \lstlistoflistings
+\endgroup
+
+\newpage
+\thispagestyle{empty}
+\
+\mainmatter
+\input{chapters/01_Resumen}
+\input{chapters/02_Introduccion}
+\input{chapters/03_Objetivos}
+
+
+\backmatter
+
+\newpage
+\begin{thebibliography}{99}
+	\input{back/bibliography}
+\end{thebibliography}
+
+\newpage \
+\thispagestyle{empty}
+\end{document}
