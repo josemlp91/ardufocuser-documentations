@@ -62,6 +62,7 @@ Tenemos estados para cada uno de los botones y los comunica al módulo de motore
 
 
 
+
 \section{Implementación dispositivo hardware}
 
 \subsection{Framework Arduino}
@@ -259,6 +260,27 @@ Y a continuación una lista de los comandos utilizados.
 Por regla general, todo comando tiene un mensaje de respuesta, bien indicando el nuevo estado del sistema que se ha cambiado (comandos escritura), bien información sobre el estado sobre el que solicitamos información (comandos lectura) o un ECHO del comando en algún otro caso.
 
 \newpage
+
+
+\section{Presupuesto}
+
+\begin{itemize}
+	\item Arduino UNO: 22\euro
+	\item Motor PaP Nema 17: 10\euro
+	\item Controladora Motor (Pololu o similar): 7\euro
+	\item Pantalla LCD + controladora I2C: 2.5\euro
+	\item Nunchaku Wii (compatible): 4\euro
+	\item Sensor Temperatura, resistencias, condensador, led: 1\euro
+	\item Cablecillos, soldadura, pines, placas, etc: 4\euro
+	\item Potenciómetros: 2\euro
+	\item Caja: 5\euro
+	\item Clavijas aviador: 3\euro
+	\item Fines de carrera: 2\euro
+	
+	
+\end{itemize}
+\textbf{Total: 62.5\euro}
+
 \subsection{Integración de módulos}
 \bigskip
 Tras trabajar en cada uno de los módulos de forma independiente una visualización más o menos precisa es la siguiente:
@@ -286,9 +308,6 @@ La implementación del dispositivo hardware, se puede definir como un proceso to
 
 
 
-
-
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{../images/proto_recorte}
@@ -305,6 +324,9 @@ Tras muchas pruebas y una vez claras las partes fundamentales de las que consta 
 	\caption{}
 	\label{fig:prototipoArdufocuser}
 \end{figure}
+
+
+Una vez perfectamente definido el esquemático pasamos a la fase de soldadura.
 
 
 \newpage
