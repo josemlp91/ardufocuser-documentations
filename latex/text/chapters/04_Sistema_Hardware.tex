@@ -60,6 +60,8 @@ Tenemos estados para cada uno de los botones y los comunica al módulo de motore
 \end{itemize}
 
 
+
+
 \section{Implementación dispositivo hardware}
 
 \subsection{Framework Arduino}
@@ -257,14 +259,39 @@ Y a continuación una lista de los comandos utilizados.
 Por regla general, todo comando tiene un mensaje de respuesta, bien indicando el nuevo estado del sistema que se ha cambiado (comandos escritura), bien información sobre el estado sobre el que solicitamos información (comandos lectura) o un ECHO del comando en algún otro caso.
 
 \newpage
+\subsection{Integración de módulos}
+\bigskip
+Tras trabajar en cada uno de los módulos de forma independiente una visualización más o menos precisa es la siguiente:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{../images/diagramaHardware}
+	\caption{}
+	\label{fig:diagramaHardware}
+\end{figure}
+
+Aún no tengo claro detalles como la alimentación de cada uno de los dispositivos,  exactamente las conexiones que va a requerir cada periférico ni su ubicación.
+
+\bigskip
+Es importante contabilizar número de pines que necesita cada periférico, si son digitales o analógico, pwd o hacen uso de interrupciones hardware. 
+
+\bigskip
+Con ello nos podemos hacer una idea aproximada del sistema y de los recursos que necesitamos.
+
+
+\newpage
 \section{Implementación hardware}
 
 La implementación del dispositivo hardware, se puede definir como un proceso totalmente iterativo, en el marco del prototipado, comenzando por las pruebas de cada unos de los módulos, y trabajando con placas que permiten remover y cambiar la distribución de los componentes.
 
 
+
+
+
+
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.6\linewidth]{../images/prototipoArdufocuser}
+\includegraphics[width=0.7\linewidth]{../images/proto_recorte}
 \caption{}
 \label{fig:prototipoArdufocuser}
 \end{figure}
@@ -274,7 +301,7 @@ Tras muchas pruebas y una vez claras las partes fundamentales de las que consta 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\linewidth]{../images/circuito}
+	\includegraphics[width=1\linewidth]{../images/circuito}
 	\caption{}
 	\label{fig:prototipoArdufocuser}
 \end{figure}
@@ -287,6 +314,27 @@ Tras muchas pruebas y una vez claras las partes fundamentales de las que consta 
 
 Con la experiencia y el trabajo, voy familiarizándome con la plataforma, conozco nuevas bibliotecas que me ayudan, nuevos periféricos,  así como mediante sesiones de refactorización, se consigue hacer código mantenible y modular. 
 
+Es importante mencionar el uso de la herramienta \textbf{PlatformIO}, que se define a sí misma como un ecosistema abierto de desarrollo orientado a hardware. 
+
+
+Tres son las características más sustanciales. 
+
+
+- PlatformIO IDE: Un IDE orientado a la programación hardware, con funciones para facilitar la depuración, así como avisos para mejorar la calidad, totalmente configurado para compilar y cargar el programa directamente en una placa física, o en una placa virtual.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../images/ide_arduino}
+	\caption{}
+	\label{fig:ide_arduino}
+\end{figure}
+
+- Terminal para realizar compilación en el cloud  para diferentes placas, así como permite compilación desde plataformas de integración continua como Travis CI.
+
+- Gestor de bibliotecas y dependencias, tiene un repositorio con las bibliotecas más usadas, pudiendo buscar y actualizar rápidamente. 
+
+
+
 El código fuente del firmware queda distribuido en los siguientes ficheros.
 
 \begin{itemize}
@@ -296,6 +344,9 @@ El código fuente del firmware queda distribuido en los siguientes ficheros.
 \item $Ardufocuser-cmd.h$: Se definen los comandos remotos, junto con sus funciones callback asociadas.
 \item $Ardufocuser-utils.h$: Incorpora algunas funciones de propósito general útiles en algunos de los módulos. 
 \item $Ardufocuser.ino$: Es el script principal, incluye los ficheros anteriores, contiene las funciones setup(),  loop() y callback de las interrupciones hardware y software.
+
+\item $library.json$: Hace referencia a las librerías de terceros, catalogadas, y con referencias al sitio web y al desarrollador o equipo de desarrollo. Por seguridad también las incorporo al repositorio en el directorio libs.  
+
 
 \end{itemize}
 \newpage
@@ -369,20 +420,9 @@ La sección de pruebas las dividimos en varias partes, pruebas de concepto de ca
 
 Además para asegurar que el firmware implementado, permite ser compilado en las distintas placas hacemos uso del framework   \textbf{PlatformIO} \cite{patform}.
 
-\textbf{PlatformIO}, se define como un ecosistema abierto de desarrollo orientado a hardware. 
-
-Tres son las características más sustanciales. 
 
 
-- PlatformIO IDE: Un IDE orientado a la programación hardware, con funciones para facilitar la depuración, así como avisos para mejorar la calidad, totalmente configurado para compilar y cargar el programa directamente en una placa física, o en una placa virtual.
 
-
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{../images/ide_arduino}
-\caption{}
-\label{fig:ide_arduino}
-\end{figure}
 
 - Buscador centralizado de bibliotecas, en los proyectos Arduino es uno de los problemas, dado que cada una de ellas puede provenir de una fuente totalmente diferente, con esta herramienta contamos con un solo lugar.
 
@@ -421,12 +461,7 @@ script:
 \end{figure}
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{../images/diagramaHardware}
-	\caption{}
-	\label{fig:diagramaHardware}
-\end{figure}
+
 
 \begin{figure}[h]
 	\centering
