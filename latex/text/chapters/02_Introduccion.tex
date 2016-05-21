@@ -1,67 +1,69 @@
 \chapter{Introducción}
 
 \bigskip
-Toda observación de cualquier fenómeno astronómico requiere de múltiples trabajos laboriosos, tareas  como  la orientación, monitorizar la  meteorología, así como operaciones de control para cada componente del observatorio, ya sea la montura del telescopio, la cámara CCD, el enfocador, la rueda de filtros etc., todo ello requiere gran cantidad de trabajo por parte del operador, asumiendo también una pérdida de tiempo útil y un riesgo que se puedan producir errores humanos o accidentes, que pongan en peligro la noche de observación.
+Toda observación de cualquier fenómeno astronómico requiere de múltiples trabajos laboriosos y operaciones de control para cada componente del observatorio, ya sea la montura del telescopio, la cámara CCD, el enfocador, la rueda de filtros etc., asumiendo una pérdida de tiempo útil y un riesgo que se puedan producir errores humanos o accidentes, que pongan en peligro la noche de observación.
 
 \bigskip
-Muchas de las operaciones siguen patrones claros, y tienen relación con el estado sensor o periférico, podemos definir rutinas automáticas,
+Muchas de las operaciones siguen patrones claros, y tienen relación con el estado de un sensor o periférico, por tanto podemos definir rutinas automáticas, 
 que agilicen los trabajos inherentes a la observación. 
 
 \bigskip
-Un ejemplo claro puede ser la decisión de abrir o cerrar la cúpula en un momento dado en función de los datos arrojados por la estación meteorológica, o la decisión de corregir el foco según el perfil de brillo obtenido para las estrellas presentes en las imagenes tomadas por la cámara CCD.
+Un ejemplo claro puede ser la decisión de abrir o cerrar la cúpula en un momento dado en función de los datos proporcionados por la estación meteorológica, o la decisión de corregir el foco según el perfil de brillo obtenido para las estrellas presentes en las imágenes tomadas por la cámara CCD.
 
 \bigskip
-En el mercado existen ya gran cantidad de recursos que se encargan de automatizar las tareas antes citadas, sin embargo, el acceso a estos recursos es caro y no todo aficionado a la astronomía puede permitírselo. Incluso pudiendo el nivel de sofisticación y complejidad
-de algunos modelos complican su manejo y por tanto el disfrute en la observación.
-
+En el mercado existen ya gran cantidad de recursos que se encargan de automatizar las tareas antes citadas, sin embargo, el acceso a estos recursos es caro y no todo aficionado a la astronomía puede permitírselo.  Además el nivel de complejidad de algunos modelos complican su manejo y por tanto el disfrute en la observación.
+Otro punto en contra de estas soluciones es que suelen ser muy cerradas, las compañías ofrecen muy pocos detalles tecnicos (los justos para poder instalarlos e integrarlos), no permiten ninguna modificación y deben funcionar exactamente bajo la plataformas definidas, en la mayoría de los cosas Windows. 
 
 \newpage
 \bigskip
-Para poner en contexto el proyecto, se  propone un recorrido por algunos de las ciencias, tecnologías y disciplinas que toman especial  protagonismo a lo largo de las siguientes páginas.
-
+Para poner en contexto el proyecto, se  propone un recorrido por algunos de las ciencias, tecnologías y disciplinas que están involucradas en el desarrollo del presente TFG.
 
 \begin{itemize}
   \item {Astronomía}
+  
   \item {Instrumental astronómico}
-  \begin{itemize}
+  \begin{itemize}	
     \item{Telescopios}
     \item{Enfocadores}
     \item{Cámara y CCD}
-    \item{Imagenes FITS}
+    
+      
   \end{itemize}
+  
   \item {Hardware libre}
    \begin{itemize}
      \item{Arduino}
      \item{Raspberry Pi}
    \end{itemize}
+   
   \item {Observatorios remotos}
    \begin{itemize}
      \item{ASCOM}
      \item{INDI}
      \item{Clientes remotos}
   \end{itemize}
+  
+  \item{Formato Imágenes}
   \item {Software procesamiento imagenes astronómicas}
 
 \end{itemize}
 
 
-
-\begin{figure}[b]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{../images/observatorio_amateur}
-\caption[Observatorio Amateur]{http://astrocienciasecu.blogspot.com.es/}
+\caption[Observatorio Amateur]{(Observatorio Amateur) http://astrocienciasecu.blogspot.com.es/}
 \label{fig:observatorio_amateur}
 \end{figure}
-
-
 \newpage
+
 \section{La Astronomía}
 
 \bigskip
 Significa literalmente el estudio de las \textbf{leyes} que rigen los \textbf{astros} o cuerpos celestes, según su etimología griega y latina.
 
 \bigskip
-Definiéndola formalmente como:
+Se define más formalmente como:
 
 \begin{quote}``\textit{Ciencia que se ocupa del estudio de los cuerpos celestes del universo, incluidos los planetas y sus satélites, los cometas y meteoritos, las estrellas y la materia interestelar,
   los sistemas de materia oscura, estrellas, gas y polvo llamados galaxias y los cúmulos de galaxias; por lo que estudia sus movimientos y fenómenos ligados a ellos.}''
@@ -69,19 +71,15 @@ Definiéndola formalmente como:
 \end{quote}
 
 \bigskip
-Pudiendo afirmar que fue la ciencia más remota por el impacto visual y emocional que causó en nuestros antepasado, llegando a captar la atención de tal forma como para pararse a estudiar y analizar el funcionamiento de los objetos suspendidos en el firmamento,fenómenos que no conseguían explicar por completo, y por eso los llegaban a divinizar en múltiples culturas.
-
-\bigskip
-Así, Rah, fue el Dios Sol para los egipcios e Isis, la diosa Luna;
-y la posición de planetas y estrellas los llevaron a predecir el futuro en base a su ubicación espacial, lo que originó la astrología.
+Se puede afirmar que fue la ciencia más remota por su impacto visual, emocional y gran utilidad en la agricultura, por ello captó la atención de nuestros antepasados, motivandololos al estudio de los objetos suspendidos en el firmamento, fenómenos que muchas veces no conseguían explicar por completo, y por eso los llegaban a divinizar en múltiples culturas.
 
 \bigskip
 Por tanto la  astronomía es una ciencia antigua y moderna a la vez. \newline
 Antigua porque se remonta prácticamente al origen de la humanidad.\newline
-Moderna porque nos proporciona uno de los campos de estudio e investigación más avanzados.
+Moderna por proporcionar uno de los campos de estudio e investigación más avanzados.
 
 \bigskip
-Ciencia cargada de múltiples misterios que a día de hoy se siguen manteniéndose, con múltiples  interrogante, como por ejemplo,  si existe vida fuera de la Tierra, o si somos la única civilización
+Se trata por tanto de una ciencia cargada de múltiples misterios que a día de hoy se siguen manteniéndose, con muchos interrogante, como por ejemplo, si existe vida fuera de la Tierra, o si somos la única civilización
 inteligente.
 
 
