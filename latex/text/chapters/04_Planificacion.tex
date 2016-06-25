@@ -1,0 +1,121 @@
+\chapter{Planificación}
+
+\section{Fases}
+
+Dado que el proyecto cuenta con módulos que pueden considerarse subsistemas de un sistema de magnitud mayor. 
+Una vez identificados los módulos que conforman el sistema, podemos hacer una separación en fases que nos ayude a evaluar las tareas y
+hacer estimaciones. Adicionalmente debemos contemplar un coste extra de integración de los módulos.
+
+\begin{itemize}
+	
+	\item \textbf{ Módulo Hardware}
+	\begin{itemize}
+		\item \textbf{Fase 0:} Planteamiento del problema.
+		\item \textbf{Fase 1:} Investigar tecnologías implicadas.
+		\item \textbf{Fase 2:} Análisis y diseño.
+		\item \textbf{Fase 3:} Implementación.
+		\item \textbf{Fase 4:} Pruebas.
+	\end{itemize}
+	
+	\item \textbf{Módulo Firmware}
+	\begin{itemize}
+		\item \textbf{Fase 0:} Planteamiento del problema.
+		\item \textbf{Fase 1:} Investigar librerías y lenguaje programación.
+		\item \textbf{Fase 2:} Análisis y diseño.
+		\item \textbf{Fase 3:} Implementación.
+		\item \textbf{Fase 4:} Pruebas.
+	\end{itemize}
+	
+	\item \textbf{Módulo Driver Indi}
+	\begin{itemize}
+		\item \textbf{Fase 0:} Planteamiento del problema.
+		\item \textbf{Fase 1:} Familiarizarme con arquitectura INDI.
+		\item \textbf{Fase 2:} Análisis y diseño.
+		\item \textbf{Fase 3:} Implementación.
+		\item \textbf{Fase 4:} Pruebas.
+	\end{itemize}
+	
+	\item \textbf{Módulo Software} 
+	\begin{itemize}
+		\item \textbf{Fase 0:} Planteamiento del problema.
+		\item \textbf{Fase 1:} Investigar entorno de procesamiento de imágenes.
+		\item \textbf{Fase 2:} Análisis y diseño.
+		\item \textbf{Fase 3:} Implementación.
+		\item \textbf{Fase 4:} Pruebas.
+	\end{itemize}
+		\item \textbf{Integración} 
+		\item \textbf{Pruebas de integración}
+		\item \textbf{Documentación}
+\end{itemize}
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{../images/Fases}
+\caption{Desarrollo de los módulos}
+\label{fig:Fases}
+\end{figure}
+
+
+
+\section{Estimación de tiempos}
+
+Dicho desglose lo realizo en el capitulo destinado a cada uno de los módulos, entrado en las tareas realizadas en cada una de las fases.
+
+
+\section{Recursos humanos}
+
+Dado que el objetivo del proyecto es formarme tanto en la gestión, como en el desarrollo de un proyecto, he sido el único integrante del equipo técnico, a excepción de tareas que requerían manejo de maquinaria avanzada, como cortadora laser, CNC o torno. 
+
+\section{Presupuesto}
+
+Para el presente proyecto se tendrán en cuenta los siguientes costes:
+
+\begin{itemize}
+	
+	\item \textbf{Costes componentes y hardware necesario}, hacemos un desglose pormenorizado en el capitulo hardware.
+	
+	\item \textbf{Costes por hora de equipo humano}, a 25\euro la hora.
+	
+	\item \textbf{Costes asociados a licencias necesarias para publicar o desarrollar
+	el software} dado que trabajamos con GNU3 \cite{GNU3}, no tenemos que invertir dinero en este aspecto.
+
+	\item \textbf{Máquina de desarrollo}, portátil valorado en 400\euro con sistema operativo Ubuntu 15.10
+	
+	\item \textbf{Servidor INDI}, Raspberry Pi, B+ que tiene un coste asociado de 35\euro. Para realizar una instalación de Servidor Indi con el Driver del Ardufocuser.
+ 
+\end{itemize}
+
+\section{Metodología}
+
+\bigskip
+En este punto explicamos la metodologia seguida para conseguir  solucionar el problema propuesto, cumpliendo cada uno de los objetivos. 
+Podemos diferenciar grandes bloques o subsistemas, que dada la diferente naturaleza debemos analizar, diseñar, implementar y testear por separado, para posteriormente dedicarnos a la integración de unos módulos con los otros.
+
+\bigskip
+Es importante mencionar que dado la novedad del proyecto y la gran labor de investigación que necesitaba, tanto a nivel conceptual como a nivel técnico, no se ha tratado con un diseño inicial totalmente estanco y cerrado, se deja abierto en muchos aspectos, y a medida que han surgido nuevas ideas o se han descubierto tecnologías, no se tenga limitación en incorporarlas, siempre con el objetivo de  optimizar la solución mediante refinamiento.
+
+\bigskip
+La metodología seguida en el proyecto podemos enmarcarla como \textit{"Iterativa basada en prototipos"}, para cada módulo se crean versiones 
+cada vez más optimas y aproximadas a la solución optima.
+
+Esto permite:
+
+\begin{itemize}
+	\item Una rápida retroalimentación por parte del cliente y validación de los requisitos. 
+	\item Optimizacion de la solución según se tiene un conocimiento más fuerte del dominio, la tecnología manejada.
+	\item Los prototipos son rápidos y economicos de construir.
+	\item Los prototipos garantizan que el producto se adapta a las necesidades del cliente, dado que el cliente es participe del dasarrollo mediante revisiones continuas. 
+	\item Los prototipos constituyen un medio de comunicación mejor que los modelos formales, ya sean diagramas o listados de requisitos. 
+	\item Permiten refinar la estimación de tiemposde desarrollo, observando de forma más realista las dificultades que se van dando.  
+	
+\end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../images/analisis1}
+	\caption[Iterativa basada en prototipos modular]{Iterativa basada en prototipos modular}
+	\label{fig:}
+\end{figure}
+\newpage

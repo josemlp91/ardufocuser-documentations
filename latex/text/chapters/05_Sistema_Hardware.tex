@@ -12,6 +12,23 @@ necesario para llegar a ello.
 Teniendo presentes las  herramientas de última generación, que en la actualidad están teniendo un gran auge y aceptación 
 en la comunidad DIY \cite{DIY} "hágalo usted mismo", como lo son las impresoras en 3D o las cortadoras láser, que agilizan la mecanización y fabricación de las partes mecánicas.
 
+\section{Fases}
+
+\begin{itemize}
+	\item \textbf{Fase 0:} Planteamiento del problema.
+	\item \textbf{Fase 1:} Investigar tecnologías implicadas.
+	\item \textbf{Fase 2:} Análisis y diseño.
+	\item \textbf{Fase 3:} Implementación.
+	\item \textbf{Fase 4:} Pruebas.
+\end{itemize}
+
+
+
+
+\section{Estimación de tiempos}
+\section{Recursos humanos}
+\section{Presupuesto}
+\section{Temporización}
 
 \section{Requisitos sistema hardware}
 
@@ -24,7 +41,6 @@ El movimiento debe responder a las ordenes, que proporcione directamente el usua
 Para emular la característica de compensación térmica, vamos a incorporar  un sensor térmico, que permita avisar al usuario de cambios considerables en la temperatura de la óptica, siendo buen síntoma para revisar el valor del enfoque.  
 
 
- 
 
 \section{Diseño sistema hardware y electrónica}
 
@@ -60,9 +76,6 @@ Tenemos estados para cada uno de los botones y los comunica al módulo de motore
 \end{itemize}
 
 
-
-
-
 \section{Implementación dispositivo hardware}
 
 \subsection{Framework Arduino}
@@ -94,7 +107,6 @@ Características principales de las placas Arduino, que pueden servirnos para de
 		Otro punto a tener en cuenta es el número de pines que permiten ejecutar  \textbf{interrupciones hardware}. 
 		
 		\item{Analógicos}, permiten lectura de valores analógicos que se encuentren el la escala de 0V a 5V, las entradas analógicas disponen de 10 bits de resolución, lo que proporciona 1024 niveles digitales, lo que a 5V supone una precisión de la medición de +-2,44mV. 
-		
 		
 	\end{itemize}
 	
