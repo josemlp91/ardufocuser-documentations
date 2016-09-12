@@ -1,3 +1,67 @@
+<<<<<<< HEAD
+\chapter{Metodología de Trabajo, Planificación y Costes}
+
+En este capítulo se desglosa información sobre la metodología de trabajo desarrollada, la planificación inicialmente propuesta (e información adicional sobre su cumplimiento) así como una estimación de costes de desarrollo del proyecto.
+
+
+\section{Metodología de Trabajo}
+
+
+Podemos diferenciar grandes bloques o subsistemas (de acuerdo con los objetivos principales marcados en el capítulo~\ref{cap:objetivos} que dada su diferente naturaleza debemos analizar, diseñar, implementar y testear por separado, para posteriormente dedicarnos a la integración de unos módulos con otros.
+
+Es importante mencionar que dado la novedad del proyecto, se necesita un trabajo extra de investigación, tanto a nivel conceptual, de dominio y técnico. Dado que no se ha tratado con un diseño inicial estanco y cerrado, se ha dejado abierto en muchos aspectos, y a medida que han do surgiendo nuevas ideas, se han descubierto tecnologías o el cliente ha propuesto un nuevo requisito, no se ha tenido limitación en tratar de incorporarlo, siempre con el objetivo de  optimizar la solución mediante refinamiento.
+
+La metodología seguida en el proyecto podemos enmarcarla como \textbf{Iterativa basada en prototipos} (figura~\ref{fig:iterProto}): para cada módulo se crean versiones cada vez más óptimas y aproximadas a la solución definitiva.
+
+Esta decisión se ha tomado en base a las siguientes características de dicha tipo de metodología, muy beneficiosas en nuestro proyecto:
+
+\begin{itemize}
+	\item Rápida \textbf{retroalimentación} por parte del cliente y validación de los requisitos. 
+	\item Optimización de la solución según se tiene un conocimiento más fuerte del dominio y la tecnología manejada.
+	\item Los prototipos son \textbf{rápidos} y \textbf{económicos} de construir.
+	\item Los prototipos garantizan que el producto se adapta a las necesidades del cliente, dado que \textbf{el cliente es participe del desarrollo mediante revisiones continuas}. 
+	\item Los prototipos constituyen un \textbf{medio de comunicación mejor} que los modelos formales, ya sean diagramas o listados de requisitos. 
+	\item Permiten \textbf{refinar la estimación de tiempos de desarrollo}, observando de forma más realista las \textbf{dificultades} que se van dando.  	
+\end{itemize}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../images/prototipos}
+	\caption[Iterativa basada en prototipos modulares]{Iterativa basada en prototipos}
+	\label{fig:iterProto}
+\end{figure}
+
+
+
+Podemos observar en la figura~\ref{fig:iterativa_basada_prototipos_modular} como cada módulo cicla por sus correspondientes fases, \textbf{planteamiento}, \textbf{análisis y diseño}, \textbf{implementación}, \textbf{pruebas}.
+
+Tras las pruebas en \textbf{feedback} se recopila información de retroalimentación, que puede proceder de errores detectados en pruebas o de  informes por parte del cliente, manifestando la falta o mal entendimiento de algunos requisitos. 
+
+Cuando se encuentran deficiencias, debemos valorar si son exclusivas e internas al propio módulo o por el contrario también incumben al módulo anterior. En caso de estar relacionado con el módulo anterior debemos realizar una iteración sobre tal módulo.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{../images/iteraciones}
+	\caption[Iterativa basada en prototipos modulares]{Diagrama iteraciones basándonos en iteraciones basadas en prototipos modulares}
+	\label{fig:iterativa_basada_prototipos_modular}
+\end{figure}
+
+
+
+
+	
+\section{Fases}
+
+Dado que el proyecto cuenta con módulos (uno por cada uno de los objetivos primarios comentados en el capítulo~\ref{cap:objetivos}) que pueden considerarse subsistemas de un sistema de magnitud mayor, 
+podemos a su vez dividir el desarrollo de cada uno de los módulos en distintas fases. Ello nos ayuda a evaluar las tareas y hacer estimaciones con alcances más reducidos. Adicionalmente debemos contemplar un coste extra de integración de los módulos. En la figura~\ref{fig:Fases} se muestra una distribución ideal del tiempo y solapamiento en la consecución de las distintas fases de cada uno de los módulos.
+
+\begin{itemize}
+	
+	\item \textbf{Módulo Hardware}
+	\begin{itemize}
+		\item \textbf{Fase 0:} Reunión con cliente y planteamiento del problema.
+=======
 \chapter{Planificación}
 
 \section{Fases}
@@ -11,6 +75,7 @@ hacer estimaciones. Adicionalmente debemos contemplar un coste extra de integrac
 	\item \textbf{ Módulo Hardware}
 	\begin{itemize}
 		\item \textbf{Fase 0:} Planteamiento del problema.
+>>>>>>> c9f08dfe66521d4f0dba18e652f93a6a37a333aa
 		\item \textbf{Fase 1:} Investigar tecnologías implicadas.
 		\item \textbf{Fase 2:} Análisis y diseño.
 		\item \textbf{Fase 3:} Implementación.
@@ -19,16 +84,27 @@ hacer estimaciones. Adicionalmente debemos contemplar un coste extra de integrac
 	
 	\item \textbf{Módulo Firmware}
 	\begin{itemize}
+<<<<<<< HEAD
+		\item \textbf{Fase 0:} Reunión con cliente y planteamiento del problema.
+=======
 		\item \textbf{Fase 0:} Planteamiento del problema.
+>>>>>>> c9f08dfe66521d4f0dba18e652f93a6a37a333aa
 		\item \textbf{Fase 1:} Investigar librerías y lenguaje programación.
 		\item \textbf{Fase 2:} Análisis y diseño.
 		\item \textbf{Fase 3:} Implementación.
 		\item \textbf{Fase 4:} Pruebas.
 	\end{itemize}
+<<<<<<< HEAD
+
+	\item \textbf{Módulo Driver INDI}
+	\begin{itemize}
+		\item \textbf{Fase 0:} Reunión con cliente y planteamiento del problema.
+=======
 	
 	\item \textbf{Módulo Driver Indi}
 	\begin{itemize}
 		\item \textbf{Fase 0:} Planteamiento del problema.
+>>>>>>> c9f08dfe66521d4f0dba18e652f93a6a37a333aa
 		\item \textbf{Fase 1:} Familiarizarme con arquitectura INDI.
 		\item \textbf{Fase 2:} Análisis y diseño.
 		\item \textbf{Fase 3:} Implementación.
@@ -37,7 +113,11 @@ hacer estimaciones. Adicionalmente debemos contemplar un coste extra de integrac
 	
 	\item \textbf{Módulo Software} 
 	\begin{itemize}
+<<<<<<< HEAD
+		\item \textbf{Fase 0:} Reunión con cliente y planteamiento del problema.
+=======
 		\item \textbf{Fase 0:} Planteamiento del problema.
+>>>>>>> c9f08dfe66521d4f0dba18e652f93a6a37a333aa
 		\item \textbf{Fase 1:} Investigar entorno de procesamiento de imágenes.
 		\item \textbf{Fase 2:} Análisis y diseño.
 		\item \textbf{Fase 3:} Implementación.
@@ -52,12 +132,106 @@ hacer estimaciones. Adicionalmente debemos contemplar un coste extra de integrac
 
 \begin{figure}[h]
 \centering
+<<<<<<< HEAD
+\includegraphics[width=1.1\linewidth]{../images/Fases}
+\caption{Evolución desarrollo de los módulos}
+=======
 \includegraphics[width=0.7\linewidth]{../images/Fases}
 \caption{Desarrollo de los módulos}
+>>>>>>> c9f08dfe66521d4f0dba18e652f93a6a37a333aa
 \label{fig:Fases}
 \end{figure}
 
 
+<<<<<<< HEAD
+\section{Temporización}
+
+Por limitaciones dadas por el horario laboral y trabajos del resto de asignaturas del grado, se hace una estimación del tiempo que se puede dedicar al proyecto: \textbf{2 horas los 5 días a la semana}. Se cuenta con fines de semana para suplir posibles imprevistos que surjan durante la semana. 
+
+
+\subsection{Estimación de tiempos}
+
+Es necesario hacer una estimación de tiempos para cada tarea a desarrollar a fin de organizar correctamente el trabajo  realizar. En principio se estima que se necesitarán unas 38 semanas de tiempo, totalizando \textbf{380 horas} de trabajo. Dichas horas se distribuyen teóricamente tal y como se muestra en el diagrama de \textbf{Gantt} situado en el apéndice apéndice \ref{gantt} (figura~\ref{gantt_inicial}).
+
+Dada la estimación anterior se prevé que la fecha de entrega será para la convocatoria de \textbf{Diciembre del 2015}.
+
+
+\subsection{Tiempos invertidos}
+
+Dada la complejidad del proyecto, así como la incorporación de diversas mejoras no previstas al inicio del mismo, así como una subestimación del esfuerzo necesario para implementar ciertas partes del proyecto, finalemente hemos observado que hemos consumido \textbf{58 semanas efectivas}, trabajando de media durante 2 horas los 5 días de la semana. Por tanto, el tiempo empleado total ha sido de 580 horas. Como resultado de este incremento en las horas de trabajo, finalmente la fecha de entrega real es \textbf{Septiembre del 2016}.
+
+Podemos ver un diagrama de Gantt del desarrollo (real) en el apéndice \ref{gantt} (figura~\ref{gantt_final}).
+
+
+Tal y como se puede observar el tiempo real esta muy por encima del tiempo estimado, exactamente pasamos de 38 a 58 semanas (380 a 580 horas), con un \textbf{desfase de 200 horas}. Analizando las causas de tal desfase, podemos encontrar:
+
+\begin{itemize}
+	\item \textbf{Varias iteraciones sobre cada módulo}, en un principio se pensó que con un primer prototipo se conseguirían alcanzar todos los objetivos. En la practica esto no ha sido posible y para llegar a resolver de forma satisfactoria todos los objetivos propuestos se han tenido que realizar varios prototipos y refinamientos de cada uno de ellos.
+	
+	\item \textbf{Requerir dos años académicos}, en el primero de ellos tras realizar un estudio del dominio, la tecnología  y una planificación inicial, por diferentes motivos personales se abandonó el desarrollo del proyecto tal y como se puede ver en el diagrama de Gantt (figura~\ref{gantt_final}) en el periodo Abril-Noviembre de 2016. Al reanudar el proyecto en Noviembre se necesita volver a invertir tiempo en planificación y estudio del dominio.
+	
+	\item \textbf{Tiempo de experimentación}, al ser un proyecto en el marco académico y orientado también a mi formación, he dedicado tiempo extra en realizar experimentos, probar diferentes alternativas, explorar Internet para recabar toda la información posible relacionada.  
+\end{itemize}
+
+Creo que el desarrollo de este proyecto es un buen ejemplo que muestra la importancia de realizar una estimación de tiempos realista, ya que en un TFG las consecuencias de un retraso no son excesivamente graves, pero en un proyecto empresarial con presupuestos fijos y \textit{deadlines}, un retraso de esta magnitud puede tener consecuencias serias. Por ello el caso dado es una excelente lección para mi futuro en el mundo laboral.  
+
+\section{Recursos humanos}
+
+A nivel de recursos humanos he sido el único integrante del equipo técnico, a excepción de tareas que requerían manejo de maquinaria avanzada, como cortadora láser, CNC o torno en el cual se ha contado con la ayuda de especialistas. 
+
+El cliente también ha sido participe en todo momento del desarrollo del proyecto, validando los requisitos del sistema, los prototipos y participando de forma activa en la pruebas. 
+
+Su cooperación y experiencia en el campo de la astronomía ha hecho que el desarrollo del proyecto sea mucho más fluido y el resultado de mayor calidad.  
+
+
+\section{Presupuesto}
+
+Para el desarrollo del presente proyecto se tendrán en cuenta los siguientes costes (resumidos en la tabla~\ref{tabla_costes}):
+
+\begin{itemize}
+	\item \textbf{Costes de componentes y hardware necesario}: se hace un desglose pormenorizado en el capítulo \ref{cap:hard}. Total 62.5 \euro. Debemos sumarle unos 50 \euro ~ adicionales en costes de componentes estropeados, pruebas de componentes que finalmente no se han usado o material fungible.
+	
+	\item \textbf{Costes por trabajo del equipo humano}: inicialmente se presupuestaron 380 horas de trabajo que equivalen a 9.5 semanas de trabajo (40 horas semanales). Suponiendo un sueldo mensual de 2000 \euro, a 4.5 semanas por mes, tenemos un coste asociado al trabajo del equipo humano de 4222 \euro.
+	
+	\item \textbf{Costes asociados a licencias necesarias para publicar o desarrollar el software}: dado que todo el trabajo se ha realizado con programas con licencias libres y gratuitas (estilo GNU3 \cite{GNU3} y similares), no tenemos que invertir dinero en este aspecto: 0 \euro.
+
+	\item \textbf{Máquina de desarrollo}: portátil valorado en 400 \euro ~ con sistema operativo Ubuntu 16.04.
+	
+	\item \textbf{Servidor INDI}: instalado en una \textbf{Raspberry Pi, B+} que tiene un coste asociado de 35 \euro. Utiliza el sistema operativo \textbf{Raspbian} \cite{raspbian} que es libre.
+	
+	\item \textbf{Herramientas de desarrollo}: Entorno de desarrollo \textbf{Netbeans} \cite{netbeans}, gratuito, editor de texto \textbf{SublimeText} \cite{sublimetext} versión gratuita, \textbf{IDE Arduino} \cite{arduinoide} gratuito: 0 \euro.
+	
+	\item \textbf{Clientes INDI}: para interactuar con el servidor INDI y sus periféricos, \textbf{Kstars} \cite{kstars} y desde Android \textbf{Observatorio Remoto} \cite{obsremoto}, ambas herramientas son gratuitas: 0 \euro.
+	
+	\item \textbf{Dominio y hosting de Internet para difundir el proyecto}: 12  \euro ~ (hosting cedido por el cliente).
+	
+	\item \textbf{Costes de impresión}: impresión de pósters para comunicación en congresos y reuniones de astronomía: 20 \euro.
+\end{itemize}
+
+\begin{table}[h!]
+	\centering
+	
+	\begin{tabular}{|l|r|}
+		\hline
+		\textbf{Elemento}                  				& \textbf{Coste (euros)} 			\\ \hline\hline
+		Componentes y hardware                   &                      	62.5 \euro  \\ \hline
+		Componentes de pruebas y fungibles   &                      	50 \euro  \\ \hline
+		Costes  equipo humano         			&                      4222 \euro  \\ \hline
+		Licencias 					        &                      	0   \euro  \\ \hline
+		Máquina de desarrollo 				&                      400 	 \euro  \\ \hline
+		Herramientas de desarrollo   		&                      0 	 \euro  \\ \hline
+		Clientes INDI        		&                      0     \euro  \\ \hline
+		Dominio y hosting		&			12 \euro \\ \hline
+		Impresión			&			20 \euro \\ \hline\hline
+		
+		\textbf{Total}          	&            \textbf{4766.5 \euro} \\ \hline
+	\end{tabular} 
+
+	\caption{Costes y gastos requeridos en el desarrollo del proyecto: se comprueba que el mayor coste se encuentra en los gastos derivados del equipo humano.}
+		\label{tabla_costes}
+\end{table}
+
+=======
 
 \section{Estimación de tiempos}
 
@@ -119,3 +293,4 @@ Esto permite:
 	\label{fig:}
 \end{figure}
 \newpage
+>>>>>>> c9f08dfe66521d4f0dba18e652f93a6a37a333aa

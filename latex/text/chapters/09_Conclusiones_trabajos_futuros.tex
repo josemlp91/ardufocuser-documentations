@@ -1,0 +1,64 @@
+\chapter{Conclusiones y trabajos futuros}
+
+Lo primero que me gustaría resaltar es que creo que el resultado de este trabajo ha sido muy satisfactorio tanto por el resultado como por el proceso de desarrollo. Con el desarrollo del proyecto he tenido oportunidad de familiarizarme con multitud de tecnologías y disciplinas para solucionar problemas de diferente naturaleza. 
+
+He conseguido implementar una solución de enfoque perfectamente válida, que cumple con gran parte de los objetivos propuestos (no solo los obligatorios, sino también algunos secundarios). No obstante es importante remarcar que \textbf{Ardufocuser} aun permanece en fase \textbf{beta}.
+
+Otro de los grandes alicientes que ha tenido el presente TFG, ha sido poder participar en jornadas de observación, agradeciendo experiencia al grupo de personas que conforman \textbf{La Azotea} \cite{laazotea} ya que con ellos he aprendido concepto básicos de astronomía, así como hacer pruebas del sistema y comprender mejor algunos de los retos que suponen algo tan aparentemente sencillo como es enfocar un telescopio.
+
+También he podido participar en varios congresos astronómicos \textbf{AstroAlcalá 2016} (Alcalá la Real) y \textbf{AstroEncuentro La Sagra 2015} (Puebla Don Fabrique), eventos muy enriquecedores donde he tenido posibilidad de ver el funcionamiento de observatorios profesionales, las soluciones de control que aplican y discutir con profesionales las posibles limitaciones, inconvenientes de los sistemas actuales y como se podrían hacer una implantación de sistemas de control basados en la tecnologías que hemos presentado en el proyecto, especialmente \textbf{INDIforJava} y \textbf{Hardware Libre}.
+
+En el presente proyecto nos hemos centrado en el módulo de enfoque, por ser uno de los problemas más interesantes, pero con la base tecnológica implementada podemos afrontar el control de muchos otros elementos de un observatorio con facilidad. 
+
+Es también reseñable y digno de destacar que es posible crear soluciones avanzadas con un presupuesto bajo y obteniendo unos resultados más que aceptables. Todo ello gracias a tecnologías libres como Arduino y Raspberry Pi, que además tienen una amplísima comunidad de personas detrás. 
+
+El proyecto ha servido para hacerme evolucionar como ingeniero en gran medida y son muchas las lecciones aprendidas:
+
+\begin{itemize}
+	\item Dar la importancia necesaria a las reuniones con los clientes, aprendiendo a escuchar y dirigir la sesión para conseguir profundizar en la necesidad reales.
+	\item Destacar la importancia de las fases de diseño y análisis, pues en base a ello se puede acortar el proceso de implementación de forma considerable, reduciendo el número de iteraciones. 
+	\item Aprender a ser más realista realizando estimaciones, especialmente cuando tenemos un alto índice de incertidumbre en muchos puntos. Este punto es de vital importancia de cara a proyectos profesionales donde los proyectos estén limitado en tiempo (existan \textit{deadlines}) y limitados economicamente mediante presupuestos fijos.
+	\item Tener una introducción a las metodológicas ágiles, en este caso la iterativa basada en prototipos.  
+	\item Ser consciente de las capacidades adquiridas durante mi formación y como con el suficiente trabajo soy capaz de trabajar y aprender en muchas otras disciplinas relacionadas.
+	\item Además, el hecho de tener que aprender y aplicar diversos conocimientos de áreas afines (como eletrónica o programación a bajo nivel) me ha hecho percatarme de como ciertos desarrollos probablemente pueden hacerse mejor si el equipo de desarrollo no se limita a una única persona sino a arios miembros con experiencia y conocimientos en áreas distintas. Por ejemplo, el presente proyecto podría haberse abordado de manera más sencilla y probablemente más eficiente si en el equipo hubieramos contado con:
+	 
+	 \begin{itemize}
+	 	\item Un \textbf{Astrofísico}  con conocimiento en los elementos del observatorio y problemas que pueden darse en las observaciones de los fenómenos.
+	 	\item Un \textbf{Ingeniero Electrónico} con conocimiento de electrónica y componentes a bajo nivel.
+	 	\item Un \textbf{Ingeniero Informático} con conocimientos de ingeniería del software y procesamiento de imágenes. 
+	 \end{itemize}
+	 
+\end{itemize}
+
+
+También quiero reseñar que la aceptación del proyecto (aún en fases tempranas) ha sido grande y ya hay 
+simpatizantes de diferente formación (astrónomos aficionados, ingenieros informáticos, mecánicos) interesados en participar en el proyecto, aportando también nuevas ideas y habilidades: Dado que es un proyecto abierto y con licencia libre puede participar cualquier interesado. Así mismo me consta que varias personas están esperando a la publicación del proyecto en su actual forma para directamente construir y utilizar Ardufocuser en sus observatorios particulares.
+
+
+
+\section{Trabajos futuros}
+
+Ardufocuser se encuentra en fase beta, lo que implica que es probable que queden detalles por afinar y ajustes que realizar. Además, existen algunas ideas que aún no se han completado o implementado o simplemente que quedan como posibles mejoras a probar. A continuación se enumeran algunas de estas ideas que podrán incorporarse o desarrollarse en el futuro:
+
+\begin{itemize}
+	\item Reducir el tamaño (y coste) de la electrónica y simplificar las conexiones, utilizando un modelo de Arduino Mini o Micro.
+	
+	\item Incorporar el repertorio de instrucciones \textbf{Robofocus} al protocolo serie, permitiendo compatibilidad con cualquier software de enfoque compatible con Robofocus (ASCOM).
+\end{itemize}
+
+
+Por otra parte a nivel software tenemos los siguientes puntos a completar en el futuro:
+
+\begin{itemize}
+	\item Implementar los algoritmos autofocus de estrellas que se han diseñado y realizar las pertinentes pruebas en un entorno real.
+	\item Corrección automática de foco por compensación por cambio de temperatura.
+	\item Implementar autofocus superficies planetarias, punto muy interesante y que aún no esta resuelto de manera satisfactoria por las soluciones comerciales. Para ello se deben estudiar nuevas funciones de evaluación adecuada para superficies planetarias. Esto no es una tarea trivial pues implica conocimientos de procesamiento de imágenes relativamente avanzadas. Además las imágenes planetarias gozan de muy poco contraste (en muchas ocasiones ordenes de magnitud por debajo que fotografías ``convencionales'') y sufren de distorsiones generadas por la atmósfera lo que no hace sencilla la adaptación de algoritmos en enfoque ``clásicos'' como los que pueden incorporar las cámaras de fotos. 
+	\item Implementar test automáticos para las rutinas de evaluación y detección.
+	\item Plantear INDI como un protocolo / plataforma que pueda ser utilizado para otros ámbitos distintos a la astronomía, como podrían ser la \textbf{domotización doméstica} o la \textbf{sensorización agrícola}.
+\end{itemize}
+
+De hecho, me consta que gracias al buen resultado obtenido en el proyecto pronto otras personas (tanto alumnos como aficionados de la astronomía) tienen pensado continuar con el diseño e implementación de otros módulos de control de instrumental astronómico como pueden ser ruedas portafiltros, cúpulas, techos corredizos, controladoras de relés, etc.
+
+
+
+

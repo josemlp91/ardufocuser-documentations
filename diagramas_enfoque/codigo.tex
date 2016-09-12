@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc
+
+\usepackage{verbatim}
+
+\title{Algoritmos Enfoque}
+
+\begin{document}
+
+\maketitle
+
+\section{Algoritmo - Enfoque  a Ciegas }
+
+\begin{verbatim}
+INICIO [EnfoqueACiegas]
+    Direccion = 0
+    NumeroPasos = 1
+    FocuserPosition = 0
+    FocuserPosition = moverEnfocadorHastaTope(Direccion)
+    Direccion = 1
+    Imagen = PedirImagenCCD()
+    exitenEstrellas = DetectarEstrellas(Imagen)
+    WHILE !exitenEstrellas  :
+        FocuserPosition=moverEnfocador(Direccion, NumeroPasos)
+        Imagen = PedirImagenCCD()
+        exitenEstrellas = DetectarEstrellas(Imagen)
+        
+FIN : return  FocuserPosition    
+\end{verbatim} 
+
+
+\section{Algoritmo - Enfoque  Básico }
+
+\begin{verbatim}
+INICIO [EnfoqueBase]
+    Direccion = 1
+    NumeroPasos = 1
+    FocuserPosition = 0
+    Imagen = PedirImagenCCD()
+    fwhm2 = CalcularFwhm(Imagen)
+    fwhm1 = 99
+    
+    WHILE fwhm2 < fwhm1 :
+        fwhm1 = fwhm2
+        FocuserPosition=moverEnfocador(Direccion, NumeroPasos)
+        Imagen = PedirImagenCCD()
+        fwhm2 = CalcularFwhm(Imagen)
+        
+FIN : return  FocuserPosition    
+\end{verbatim} 
+
+\newpage
+\section{Algoritmo Enfoque  - Refinamiento Seeing }
+
+\begin{verbatim}
+DEFINE [TomaFotosYCalcularMediaFWHM()]
+    FOR i=0;i<10;i++ :  
+        Imagen = PedirImagenCCD()
+        SumFwhm += CalcularFwhm(Imagen)
+   MeanFwhm = SumFwhm / 10
+FIN : return  MeanFwhm
+
+INICIO [EnfoqueSeeing]
+    Direccion = 1
+    NumeroPasos = 1
+    FocuserPosition = 0
+    fwhm1 = TomaFotosYCalcularMediaFWHM()
+    fwhm2 = 99
+    
+    WHILE fwhm2 < fwhm1 :
+        fwhm2 = fwhm1
+        FocuserPosition=moverEnfocador(Direccion, NumeroPasos)
+        fwhm2 = TomaFotosYCalcularMediaFWHM()
+        
+    FIN : return  FocuserPosition 
+
+
+\end{verbatim}
+
+\newpage
+\section{Algoritmo Enfoque  - Refinamiento Seeing + Backlash }
+
+\begin{verbatim}
+
+DEFINE [TomaFotosYCalcularMediaFWHM()]
+    FOR i=0;i<10;i++ :  
+        Imagen = PedirImagenCCD()
+        SumFwhm += CalcularFwhm(Imagen)
+   MeanFwhm = SumFwhm / 10
+FIN : return  MeanFwhm
+
+INICIO [EnfoqueSeeingBacklash]
+
+    Direccion = 1
+    NumeroPasos = 1
+    FocuserPosition = 0
+      
+    fwhm2 = TomaFotosYCalcularMediaFWHM()
+    fwhm1 = 99
+    
+    WHILE fwhm2 < fwhm1 :
+        fwhm1 = fwhm2
+        FocuserPosition=moverEnfocador(Direccion, NumeroPasos)
+        fwhm2 = TomaFotosYCalcularMediaFWHM()
+
+    BestFocusPosition = FocuserPosition
+
+    FocuserPosition= moverEnfocador(FocuserPosition - 20)
+    FocuserPosition= moverEnfocador(BestFocusPosition)
+        
+    FIN : return  FocuserPosition 
+
+\end{verbatim} 
+
+
+\end{document}

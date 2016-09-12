@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
-\usepackage[spanish,es-tabla]{babel}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
 \usepackage{pdfpages}
@@ -11,14 +11,19 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{parskip}
+\usepackage{gensymb}
+
 %\usepackage{natbib}
+\usepackage[toc,style=altlistgroup,hyperfirst=false]{glossaries}
 
 % Información reutilizable
 \newcommand{\asunto}{Trabajo de Fin de Grado}
-\newcommand{\titulo}{Enfocador Astronomico Automático}
-\newcommand{\tituloEng}{Automatic astronomical focuser}
+\newcommand{\titulo}{Ardufocuser: Una Solución Libre para Enfoque Astronómico}
+\newcommand{\tituloEng}{Ardufocuser: An Automatic Astronomical Focusing Solution}
 \newcommand{\grado}{Grado en Ingeniería Informática}
 \newcommand{\autor}{José Miguel López Pérez}
+\newcommand{\dni}{15516308W}
 \newcommand{\email}{josmilope@gmail.com}
 \newcommand{\tutor}{Dr. Sergio Alonso Burgos}
 \newcommand{\escuela}{Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación}
@@ -34,7 +39,7 @@
 	pdfauthor = {\autor\ (\email)},
 	pdftitle = {\titulo},
 	pdfsubject = {\asunto},
-	pdfkeywords = {atronomía, hardware libre, procesamiento imágenes, INDI, arduino,  software libre},
+	pdfkeywords = {Arduino, hardware libre, astronomía, robotización de telescopios, INDI, software libre, driver, internet of things, procesamiento imagen},
 	pdfcreator = {LaTeX con el paquete texlive},
 	pdfproducer = {pdflatex}
 }
@@ -50,8 +55,8 @@
 \setlength{\headheight}{1.5\headheight}
 
 % Redefinición de comandos
-\renewcommand{\lstlistingname}{Fragmento de código}
-\renewcommand{\lstlistlistingname}{Índice de fragmentos de código}
+\renewcommand{\lstlistingname}{Fragmento de Código}
+\renewcommand{\lstlistlistingname}{Índice de Fragmentos de Código}
 \renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}}
 
@@ -68,6 +73,13 @@
 \colorlet{punct}{red!60!black}
 \colorlet{numb}{magenta!60!black}
 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{dred}{rgb}{0.545,0,0}
+\definecolor{dblue}{rgb}{0,0,0.545}
+\definecolor{lgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+
 % Listados
 \lstset{
 	aboveskip=0.5cm,
@@ -78,13 +90,13 @@
 	frame=Ltb,
 	framerule=0.5pt,
 	framesep=0pt,
-	framexbottommargin=3pt,
+	framexbottommargin=0.1pt,
 	framexleftmargin=0.1cm,
-	framextopmargin=3pt,
+	framextopmargin=0.5pt,
 	keywordstyle=\bfseries,
 	numberfirstline = false,
 	numbers=left,
-	numbersep=6pt,
+	numbersep=5pt,
 	numberstyle=\tiny,
 	rulesep=.4pt,
 	rulesepcolor=\color{black},
@@ -102,80 +114,11 @@
 \lstnewenvironment{listing}[1][]
 	{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
 
-% Listado definido para JavaScript
-% http://tex.stackexchange.com/questions/89574/language-option-supported-in-listings/89576#89576
-\lstdefinelanguage{javascript}{
-	backgroundcolor=\color{background},
-	basicstyle=\footnotesize,
-	breaklines=true,
-	captionpos=b,
-	comment=[l]{//},
-	commentstyle=\color{purple}\ttfamily,
-	frame=lines,
-	identifierstyle=\color{black},
-	keywordstyle=\color{blue}\bfseries,
-	morecomment=[s]{/*}{*/},
-	morestring=[b]',
-	morestring=[b]",
-	ndkeywordstyle=\color{darkgray}\bfseries,
-	numbers=left,
-	numbersep=8pt,
-	numberstyle=\scriptsize,
-	sensitive=false,
-	showstringspaces=false,
-	stepnumber=1,
-	stringstyle=\color{red}\ttfamily,
-	keywords={
-		break,
-		case,
-		catch,
-		catch,
-		do,
-		else,
-		false,
-		function,
-		if,
-		in,
-		new,
-		null,
-		return,
-		switch,
-		true,
-		typeof,
-		var,
-		while},
-	ndkeywords={
-		boolean,
-		class,
-		export,
-		implements,
-		import,
-		this,
-		throw}
-}
 
-% Listado definido para JSON
-% http://tex.stackexchange.com/questions/83085/how-to-improve-listings-display-of-json-files/83100#83100
-\lstdefinelanguage{json}{
-	backgroundcolor=\color{background},
-	basicstyle=\footnotesize,
-	breaklines=true,
-	captionpos=b,
-	frame=lines,
-	numbers=left,
-	numbersep=8pt,
-	numberstyle=\scriptsize,
-	showstringspaces=false,
-	stepnumber=1,
-	literate=
-		*{:}{{{\color{punct}{:}}}}{1}
-		{,}{{{\color{punct}{,}}}}{1}
-	    {\{}{{{\color{delim}{\{}}}}{1}
-	    {\}}{{{\color{delim}{\}}}}}{1}
-	    {[}{{{\color{delim}{[}}}}{1}
-	    {]}{{{\color{delim}{]}}}}{1}
-	    {ñ}{{\~{n}}}{1}
-}
+
+	
+	
+\input{language_styles}
 
 % Para que las páginas en blanco no tengan cabecera
 \makeatletter
@@ -204,11 +147,11 @@
  \let\cleardoublepage\clearpage
   \tableofcontents
   \listoffigures
-  %\listoftables
-  %\lstlistoflistings
+  \listoftables
+  \lstlistoflistings
  \endgroup
 
- \newpage
+
  \thispagestyle{empty}
  \
  \mainmatter
@@ -218,15 +161,46 @@
 \input{chapters/04_Planificacion}
 \input{chapters/05_Modulo_Hardware}
 \input{chapters/06_Modulo_Firmware}
+<<<<<<< HEAD
+\input{chapters/07_Modulo_Driver_Indi}
+\input{chapters/08_Modulo_Software}
+\input{chapters/10_Documentacion_y_difusion}
+\input{chapters/09_Conclusiones_trabajos_futuros}
 
 
 
+%\newpage
+
+
+\input{glosario/entradas_glosario} 
+
+
+\appendix
+\input{apendices/diagrama_hardware}
+\input{apendices/diagramas_gantt}
+\input{apendices/diseno_caja}
+\input{apendices/pruebas}
+
+
+\bibliographystyle{bibliografia/splncs}
+\bibliography{bibliografia/bibliografia}
+
+
+=======
+>>>>>>> c9f08dfe66521d4f0dba18e652f93a6a37a333aa
+
+
+\thispagestyle{empty}
+
+<<<<<<< HEAD
+=======
 \newpage
 %\bibliography{BIBLIO}
 %\bibliographystyle{apalike}
 \bibliography{bibliografia}\addcontentsline{toc}{chapter}{Bibliografía}
 %\bibliographystyle{miunsrturl}
 \bibliographystyle{ieeetr}
+>>>>>>> c9f08dfe66521d4f0dba18e652f93a6a37a333aa
 
 
 \end{document}

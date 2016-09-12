@@ -1,0 +1,89 @@
+
+\usepackage{xcolor}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{dred}{rgb}{0.545,0,0}
+\definecolor{dblue}{rgb}{0,0,0.545}
+\definecolor{lgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+
+% Listado definido para JavaScript
+% http://tex.stackexchange.com/questions/89574/language-option-supported-in-listings/89576#89576
+\lstdefinelanguage{javascript}{
+	backgroundcolor=\color{background},
+	basicstyle=\footnotesize,
+	breaklines=true,
+	captionpos=b,
+	comment=[l]{//},
+	commentstyle=\color{purple}\ttfamily,
+	frame=lines,
+	identifierstyle=\color{black},
+	keywordstyle=\color{blue}\bfseries,
+	morecomment=[s]{/*}{*/},
+	morestring=[b]',
+	morestring=[b]",
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	numbers=left,
+	numbersep=8pt,
+	numberstyle=\scriptsize,
+	sensitive=false,
+	showstringspaces=false,
+	stepnumber=1,
+	stringstyle=\color{red}\ttfamily,
+	keywords={
+		break,
+		case,
+		catch,
+		catch,
+		do,
+		else,
+		false,
+		function,
+		if,
+		in,
+		new,
+		null,
+		return,
+		switch,
+		true,
+		typeof,
+		var,
+		while},
+	ndkeywords={
+		boolean,
+		class,
+		export,
+		implements,
+		import,
+		this,
+		throw}
+}
+
+
+
+\lstdefinelanguage{cpp}{
+	backgroundcolor=\color{lgrey},  
+	basicstyle=\footnotesize \ttfamily \color{black} \bfseries,   
+	breakatwhitespace=false,       
+	breaklines=true,               
+	captionpos=b,                   
+	commentstyle=\color{dkgreen},   
+	deletekeywords={...},          
+	escapeinside={\%*}{*)},                  
+	frame=single,                  
+	language=C++,                
+	keywordstyle=\color{purple},  
+	morekeywords={BRIEFDescriptorConfig,string,TiXmlNode,DetectorDescriptorConfigContainer,istringstream,cerr,exit}, 
+	identifierstyle=\color{black},
+	stringstyle=\color{blue},      
+	numbers=right,                 
+	numbersep=5pt,                  
+	numberstyle=\tiny\color{black}, 
+	rulecolor=\color{black},        
+	showspaces=false,               
+	showstringspaces=false,        
+	showtabs=false,                
+	stepnumber=1,                   
+	tabsize=5,                     
+	title=\lstname,                 
+}

@@ -1,0 +1,30 @@
+\ifglsentryexists{ruteador}{}%
+{%
+\gls@defglossaryentry{ruteador}%
+{%
+name={ruteador},%
+sort={ruteador},%
+type={main},%
+first={ruteador},%
+firstplural={ruteadors},%
+text={ruteador},%
+plural={ruteadors},%
+description={En una red de computadoras existe un nodo llamado ruteador, que se encarga de trazar una ruta entre un nodo origen a un nodo destino},%
+descriptionplural={En una red de computadoras existe un nodo llamado ruteador, que se encarga de trazar una ruta entre un nodo origen a un nodo destino},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

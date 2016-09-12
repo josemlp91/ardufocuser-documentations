@@ -1,0 +1,63 @@
+\chapter{Resumen}
+
+De acuerdo con la normativa vigente para los Trabajos de Fin de Grado a continuación se presentan las palabras clave del proyecto así como el resumen breve del mismo, tanto en español como en inglés.
+
+\section{Breve resumen y palabras clave}
+\noindent{\textbf{Palabras clave}: \textit{Arduino}, \textit{hardware libre}, \textit{astronomía},\textit{robotización de telescopios}, \textit{INDI}, \textit{software libre}, \textit{driver}, \textit{internet of things}, \textit{procesamiento imagen}.\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{../images/simple}
+\caption{Ardufocuser: logo del proyecto}
+\label{fig:logo}
+\end{figure}
+
+El objetivo principal de este proyecto es diseñar e implementar un sistema completo de enfoque automático, que permita acoplarse fácilmente a un telescopio y realizar una configuración de sus lentes o espejos y que consiga el mejor enfoque de imágenes estelares. 
+
+Para ello debemos hacer un recorrido que pase por el diseño y programación a bajo nivel, implementación hardware, protocolos de comunicación con los clientes, métricas y heurísticas para evaluar la calidad de las imágenes, así como los distintos algoritmos para encontrar los máximos deseados.
+
+Al introducirnos en el proyecto nos hemos encontrado un amplio y rico abanico de retos y problemas relacionados con el diseño, la computación, algorítmica, desarrollo software y protocolos de comunicación.
+
+%Dado la historia y recorrido de la astronomía, podemos apreciar una gran evolución en las herramientas astronómicas, que han apareciendo, sirviéndose siempre de los últimos avances en los demás campos de la ciencia, ya sea óptica, matemáticas, mecánica, electrónica o informática.
+
+Hoy día ya contamos con numerosas plataformas de control y automatización de dispositivos astronómicos, aunque en muchos casos se relacionan con grandes compañías privadas, y ello implica numerosos derechos intelectuales, el inconveniente de no encontrar detalles técnicos, libertad para conocer el funcionamiento y por tanto no poder realizar modificaciones a voluntad.
+
+El reto al que nos enfrentamos en este proyecto es acercar hardware y software libre a la astronomía, creando herramientas avanzadas con un bajo presupuesto, alcance libre de todas sus interioridades, detalles técnicos, así como la libertad para mejorar y evolucionar el producto por todo aquel interesado.
+
+Por tanto, pretendo que este proyecto además de ser un producto perfectamente funcional, sea una semilla para multitud de nuevos proyectos en el contexto de la astronomía y el software y hardware libre.
+
+
+
+\section{Extended abstract and key words}
+
+\begin{center}
+{\Large\bfseries\tituloEng}\\
+\end{center}
+\begin{center}
+\autor\
+\end{center}
+
+\noindent{\textbf{Key words}: \textit{Arduino}, \textit{free hardware}, \textit{astronomy},\textit{robotic telescopes}, \textit{INDI}, \textit{free software}, \textit{driver}, \textit{internet of things}, \textit{image pocessing}.\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\linewidth]{../images/simple}
+\caption{Ardufocuser: project logo}
+\label{fig:logoE}
+\end{figure}
+
+The main objective of this project is to design and implement a complete automatic focusing solution. It should be easily attached to a telescope allowing to correctly align it lenses or mirrors to obtain the best possible focus for stellar imaging. 
+
+To do so we must cover several different areas including programming in a lower level, make hardware implementations, develop communication protocols with client software, design different metrics and heuristic to measure image quality and even design different algorithms to obtain the best focused images.
+
+Once we have started the project we have found a rich and big amount of challenges and problems related to the design of the platform, computation, algorithms, software development and even communication protocols.
+
+
+
+Hoy día ya contamos con numerosas plataformas de control y automatización de dispositivos astronómicos, aunque en muchos casos se relacionan con grandes compañías privadas, y ello implica numerosos derechos intelectuales, el inconveniente de no encontrar detalles técnicos, libertad para conocer el funcionamiento y por tanto no poder realizar modificaciones a voluntad.
+
+El reto al que nos enfrentamos en este proyecto es acercar hardware y software libre a la astronomía, creando herramientas avanzadas con un bajo presupuesto, alcance libre de todas sus interioridades, detalles técnicos, así como la libertad para mejorar y evolucionar el producto por todo aquel interesado.
+
+Por tanto, pretendo que este proyecto además de ser un producto perfectamente funcional, sea una semilla para multitud de nuevos proyectos en el contexto de la astronomía y el software y hardware libre.
+
+

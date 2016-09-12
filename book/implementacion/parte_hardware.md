@@ -1,1 +1,0 @@
-# Parte Hardware y electrónica
